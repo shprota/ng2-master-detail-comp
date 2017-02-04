@@ -1,0 +1,24 @@
+<ds-list-container>
+
+  <div class="container">
+    <div class="row align-items-stretch">
+      <div class="col flex-first">
+        <ul class="nav">
+
+          <ds-list-item *ngFor="let item of persons; let i=index" [index]="i" (onSelected)="selectedIndex=$event">
+            <person-item [person]="item" [selected]="selectedIndex===i"></person-item>
+          </ds-list-item>
+
+        </ul>
+      </div>
+      <div class="col flex-last">
+
+        <ds-list-detail *ngIf="selectedIndex!=undefined">
+          <person-detail [person]="persons[selectedIndex]"></person-detail>
+        </ds-list-detail>
+
+      </div>
+    </div>
+  </div>
+
+</ds-list-container>

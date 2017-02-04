@@ -1,0 +1,6 @@
+.list-group-item{
+    margin: 5px;
+}
+.selected {
+    background-color: red;
+}
