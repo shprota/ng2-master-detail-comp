@@ -4,7 +4,7 @@ import { Person } from "./person-model";
 @Component({
   selector: 'person-item',
   templateUrl: './person-item.component.html',
-  styleUrls: ['./person-item.component.css']
+  styles: [`.list-group-item{ margin: 5px;}`]
 })
 export class PersonItemComponent {
   @Input() person: Person;

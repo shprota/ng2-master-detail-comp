@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DsListContainerComponent } from './ds-list/ds-list-container.component';
-import { DsListItemComponent } from './ds-list/ds-list-item.component';
-import { DsListDetailComponent } from './ds-list/ds-list-detail.component';
+import { DetailComponent } from 'app/master-detail/detail.component';
+import { MasterDetailComponent } from 'app/master-detail/container.component';
+import { MasterItemComponent } from 'app/master-detail/item.component';
 import { PersonItemComponent } from './person/person-item.component';
 import { PersonDetailComponent } from './person/person-detail.component';
 import { PersonLayoutExample1Component } from './person-layout-example1/person-layout-example1.component';
@@ -15,9 +15,9 @@ import { PersonLayoutExample2Component } from './person-layout-example2/person-l
 @NgModule({
   declarations: [
     AppComponent,
-    DsListContainerComponent,
-    DsListItemComponent,
-    DsListDetailComponent,
+    DetailComponent,
+    MasterDetailComponent,
+    MasterItemComponent,
     PersonItemComponent,
     PersonDetailComponent,
     PersonLayoutExample1Component,

@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'ds-list-item',
-  templateUrl: './ds-list-item.component.html',
-  styleUrls: ['./ds-list-item.component.css']
+  selector: 'md-item',
+  template: `<div class="listItem" (click)="select()"><ng-content></ng-content></div>`,
+  styles: [`.listItem { cursor: pointer; }`]
 })
-export class DsListItemComponent {
+export class MasterItemComponent {
   @Input() index: number;
   @Output() onSelected = new EventEmitter<number>();
 
@@ -13,4 +13,3 @@ export class DsListItemComponent {
     this.onSelected.emit(this.index);
   }
 }
-

@@ -1,17 +1,10 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Person } from "./person-model";
 
 @Component({
   selector: 'person-detail',
-  templateUrl: './person-detail.component.html',
-  styleUrls: ['./person-detail.component.css']
+  templateUrl: './person-detail.component.html'
 })
-export class PersonDetailComponent implements OnInit {
+export class PersonDetailComponent {
   @Input() person: Person;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
