@@ -6,5 +6,5 @@ import { Person } from "./person-model";
   templateUrl: './person-detail.component.html'
 })
 export class PersonDetailComponent {
-  @Input() person: Person;
+  @Input() model: Person;
 }

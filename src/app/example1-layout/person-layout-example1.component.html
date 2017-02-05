@@ -1,10 +1,10 @@
-<md-container>
+<!--<md-container>
 
   <div class="container">
     <div class="row align-items-stretch">
       <div class="col flex-first">
-        <ul class="list-group">
-        
+        <ul class="nav">
+
           <md-item *ngFor="let item of persons; let i=index" [index]="i" (onSelected)="selectedIndex=$event">
             <person-item [person]="item" [selected]="selectedIndex===i"></person-item>
           </md-item>
@@ -13,7 +13,7 @@
       </div>
       <div class="col flex-last">
 
-        <md-detail *ngIf="selectedIndex!=undefined">
+        <md-detail>
           <person-detail [person]="persons[selectedIndex]"></person-detail>
         </md-detail>
 
@@ -21,4 +21,4 @@
     </div>
   </div>
 
-</md-container>
+</md-container>-->

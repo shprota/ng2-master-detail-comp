@@ -1,0 +1,11 @@
+<mdn-container [itemsModel]="persons">
+
+    <mdn-item *ngFor="let item of persons; let i=index" [index]="i">
+        <person-item #item></person-item>
+    </mdn-item>
+
+    <mdn-detail>
+        <person-detail #detail></person-detail>
+    </mdn-detail>
+
+</mdn-container>

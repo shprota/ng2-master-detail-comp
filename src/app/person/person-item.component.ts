@@ -7,6 +7,5 @@ import { Person } from "./person-model";
   styles: [`.list-group-item{ margin: 5px;}`]
 })
 export class PersonItemComponent {
-  @Input() person: Person;
-  @Input() selected: boolean;
+  @Input() model: Person;
 }
