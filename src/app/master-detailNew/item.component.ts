@@ -10,9 +10,6 @@ export class MasterItemComponentNew implements OnInit {
   @Input() index: number;
   @ContentChild('item') itemComponent: any;
 
-  select() {
-    this.parentComponent.itemSelected(this.index);
-  }
   constructor(private parentComponent: MasterDetailComponentNew) {
   }
   ngOnInit() {
@@ -25,6 +22,9 @@ export class MasterItemComponentNew implements OnInit {
   }
   get active() {
     return this.parentComponent.selectedIndex === this.index;
+  }
+  select() {
+    this.parentComponent.itemSelected(this.index);
   }
 
 }

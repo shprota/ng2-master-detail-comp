@@ -1,6 +1,7 @@
-<div class="card" style="margin-top: 3rem;">
+<div class="card" >
   <div class="card-block">
     <h4 class="card-title">Detail Area</h4>
-    <ng-content *ngIf="selectedModel"></ng-content>
+    <p class="card-text"><ng-content *ngIf="selectedModel"></ng-content></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>

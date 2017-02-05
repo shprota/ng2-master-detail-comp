@@ -1,0 +1,22 @@
+<mdn-container [itemsModel]="persons">
+    <div class="container-flow">
+        <div class="row align-items-start">
+            <div class="col flex-first">
+
+                <mdn-item *ngFor="let item of persons; let i=index" [index]="i">
+                    <person-item #item></person-item>
+                </mdn-item>
+
+            </div>
+            <div class="col flex-last">
+
+                <mdn-detail>
+                    <person-detail #detail></person-detail>
+                </mdn-detail>
+
+            </div>
+
+        </div>
+    </div>
+
+</mdn-container>
