@@ -1,22 +1,22 @@
-<mdn-container [itemsModel]="persons">
+<md-container [itemsModel]="persons">
     <div class="container-flow">
         <div class="row align-items-start">
             <div class="col flex-first">
 
-                <mdn-item *ngFor="let item of persons; let i=index" [index]="i">
+                <md-item *ngFor="let item of persons; let i=index" [index]="i">
                     <person-item #item></person-item>
-                </mdn-item>
+                </md-item>
 
             </div>
             <div class="col flex-last">
 
-                <mdn-detail>
+                <md-detail>
                     <person-detail #detail></person-detail>
-                </mdn-detail>
+                </md-detail>
 
             </div>
 
         </div>
     </div>
 
-</mdn-container>
+</md-container>

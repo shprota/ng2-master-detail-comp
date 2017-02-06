@@ -1,20 +1,20 @@
 import { OnInit, Component, ContentChild, Input } from '@angular/core';
-import { MasterDetailComponentNew } from './container.component'
+import { MasterDetailComponent } from './container.component'
 
 @Component({
-  selector: 'mdn-item',
+  selector: 'md-item',
   templateUrl: "./item.component.html",
   styles: [`.listItem { cursor: pointer;}`]
 })
-export class MasterItemComponentNew implements OnInit {
+export class MasterItemComponent implements OnInit {
   @Input() index: number;
   @ContentChild('item') itemComponent: any;
 
-  constructor(private parentComponent: MasterDetailComponentNew) {
+  constructor(private parentComponent: MasterDetailComponent) {
   }
   ngOnInit() {
     if (this.itemComponent == undefined) {
-      console.error("mdn-item; It is required to have a item component marked with #item");
+      console.error("md-item; It is required to have a item component marked with #item");
       return;
     }
 

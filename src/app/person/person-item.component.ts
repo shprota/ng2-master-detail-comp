@@ -3,8 +3,7 @@ import { Person } from "./person-model";
 
 @Component({
   selector: 'person-item',
-  templateUrl: './person-item.component.html',
-  styles: [`.list-group-item{ margin: 5px;}`]
+  template: `{{model?.name}}`
 })
 export class PersonItemComponent {
   @Input() model: Person;

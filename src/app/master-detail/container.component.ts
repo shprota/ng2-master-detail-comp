@@ -3,10 +3,10 @@ import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
 
 @Component({
-  selector: 'mdn-container',
+  selector: 'md-container',
   template: `<ng-content></ng-content>`
 })
-export class MasterDetailComponentNew {
+export class MasterDetailComponent {
   selectionSource : Subject<number>;
   public selectionStream$ :Observable<number>;
   @Input() itemsModel: any[];

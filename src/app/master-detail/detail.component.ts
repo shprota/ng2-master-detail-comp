@@ -1,23 +1,23 @@
 import { Component, ContentChild, OnDestroy, OnInit } from '@angular/core';
-import { MasterDetailComponentNew } from './container.component'
+import { MasterDetailComponent } from './container.component'
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
-  selector: 'mdn-detail',
+  selector: 'md-detail',
   templateUrl: "./detail.component.html"
 })
-export class DetailComponentNew implements OnDestroy, OnInit {
+export class DetailComponent implements OnDestroy, OnInit {
   selectedIndex: number = undefined;
   selectedModel: any = undefined;
   subscription: Subscription;
 
   @ContentChild('detail') detailComponent: any;
 
-  constructor(private parentComponent: MasterDetailComponentNew) {
+  constructor(private parentComponent: MasterDetailComponent) {
   }
   ngOnInit() {
     if (this.detailComponent == undefined) {
-      console.error("mdn-detail; It is required to have a detail component marked with #detail");
+      console.error("md-detail; It is required to have a detail component marked with #detail");
       return;
     }
 
