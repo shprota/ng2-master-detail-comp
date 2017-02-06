@@ -3,7 +3,10 @@ import { MasterDetailComponent } from './container.component'
 
 @Component({
   selector: 'md-item',
-  templateUrl: "./item.component.html",
+  template: `
+<li class="list-group-item listItem" (click)="select()" [class.active]="active">
+    <ng-content></ng-content>
+</li>`,
   styles: [`.listItem { cursor: pointer;}`]
 })
 export class MasterItemComponent implements OnInit {

@@ -4,18 +4,26 @@ import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'md-detail',
-  templateUrl: "./detail.component.html"
+  template: `
+<div class="card" >
+  <div class="card-block">
+    <h4 class="card-title">Detail Area</h4>
+    <p class="card-text"><ng-content *ngIf="selectedModel"></ng-content></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>  
+`
 })
 export class DetailComponent implements OnDestroy, OnInit {
-  selectedIndex: number = undefined;
-  selectedModel: any = undefined;
-  subscription: Subscription;
+  private selectedIndex: number = undefined;
+  private selectedModel: any = undefined;
+  private subscription: Subscription;
 
   @ContentChild('detail') detailComponent: any;
 
   constructor(private parentComponent: MasterDetailComponent) {
   }
-  ngOnInit() {
+  public ngOnInit() {
     if (this.detailComponent == undefined) {
       console.error("md-detail; It is required to have a detail component marked with #detail");
       return;
@@ -26,18 +34,18 @@ export class DetailComponent implements OnDestroy, OnInit {
         this.select(index);
       }
     )
-    this.select( this.parentComponent.selectedIndex);
+    this.select(this.parentComponent.selectedIndex);
   }
 
-  select(index: number): void {
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  private select(index: number): void {
     this.selectedIndex = index;
     this.selectedModel = this.parentComponent.itemsModel[index];
 
     this.detailComponent.model = this.selectedModel;
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }
