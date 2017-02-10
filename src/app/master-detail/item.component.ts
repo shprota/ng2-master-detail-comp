@@ -15,7 +15,7 @@ export class MasterItemComponent implements OnInit {
 
   constructor(private parentComponent: MasterDetailComponent) {
   }
-  ngOnInit() {
+  public ngOnInit(): void {
     if (this.itemComponent == undefined) {
       console.error("md-item; It is required to have a item component marked with #item");
       return;
@@ -23,10 +23,10 @@ export class MasterItemComponent implements OnInit {
 
     this.itemComponent.model = this.parentComponent.itemsModel[this.index];
   }
-  get active() {
+  public get active() {
     return this.parentComponent.selectedIndex === this.index;
   }
-  select() {
+  public select() {
     this.parentComponent.itemSelected(this.index);
   }
 
